@@ -1,0 +1,52 @@
+@include tablet {
+    .seccion-inferior {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada-blog {
+    margin-bottom: 2rem;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 2fr; //separa en dos columnas 
+        column-gap: 2rem;  //separa la distancia entre ambas columnas
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.informacion-meta {
+    span {
+        color: $amarillo;
+    }
+}
+
+.texto-entrada {
+    a {
+        color: $negro;
+        margin-top: 5rem;
+        display: block;  //poner esto porque todos los enlaces tienen display: inline por default y para que habilite los cambios se pone eso
+        @include tablet { 
+            margin-top: 0;
+        }
+    }
+    h4 {
+        margin: 0;
+        line-height: 1.4;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 15rem;
+            height: .5rem;
+            background-color: $verde;
+            margin-top: 1rem;
+        }
+    }
+   
+}

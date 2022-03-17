@@ -1,0 +1,122 @@
+
+.derecha {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    gap: 3rem;
+    
+
+    @include tablet {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+       
+
+    }
+
+    .dark-mode-boton {
+        width: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        filter: invert(100%);
+
+        @include tablet {
+            margin-top: 0;
+            &:hover {
+                cursor: pointer;
+                color: $verde;
+            }
+        }
+       
+    }
+        
+       
+           
+    }
+
+
+
+
+.barra {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start ;
+    padding-top: 2rem;
+    
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.navegacion {
+
+    //display: none;
+    // Esto es lo mismo que el de abajo, solo que con
+    // este no se puede animar, por eso se usa el de abajo
+    
+    visibility: hidden;
+    opacity: 0;
+    height: 5;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+    
+    @include tablet {
+        display: flex;
+        align-items: center; //es lo que permite el centrado verticalmente
+        opacity: 1;
+        visibility: visible;
+
+        
+    }
+
+   
+    a {
+        color: $blanco;
+        text-decoration: none;
+        font-size: 2rem;
+        display: block;
+        text-align: center;
+
+        @include tablet {
+            font-size: 1.8rem;
+            margin-right: 2rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:hover {
+               
+                cursor: pointer;
+                color: $verde;
+            }
+        }
+    }
+}
+
+/** menu hamburguesa (responsive) **/
+.mobile-menu {
+    @include tablet {
+        display: none;
+    }
+
+    img {
+        width: 4rem;
+    }
+}
+
+.mostrar {
+    /* display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+    } */ // Esto es lo mismo que el de abajo, solo que con
+    // este no se puede animar, por eso se usa el de abajo
+    visibility: visible;
+    opacity: 1;
+    height: 5;
+    
+}
+
+
